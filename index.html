@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Chelloo ❤️</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Georgia,serif;
+  background:#09070a;color:#fff;overflow-x:hidden;
+}
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  text-align:center;position:relative;padding:35px 18px;
+  background:
+   linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.9)),
+   url('photos/photo2.jpeg') center/cover fixed;
+}
+.hero:after{
+ content:"";position:absolute;inset:0;
+ background:radial-gradient(circle at center,transparent 15%,rgba(0,0,0,.7) 85%);
+}
+.content{position:relative;z-index:2;max-width:800px}
+.small{letter-spacing:5px;text-transform:uppercase;font-size:12px;opacity:.8}
+h1{font-size:clamp(55px,14vw,125px);line-height:.9;margin:18px 0 10px}
+.script{font-style:italic;color:#ff8fa8;font-size:clamp(28px,7vw,55px)}
+.sub{font-size:18px;line-height:1.7;max-width:600px;margin:22px auto;color:#eee}
+.btn{
+ display:inline-block;margin-top:22px;padding:14px 25px;border:1px solid #fff;
+ border-radius:999px;color:#fff;text-decoration:none;backdrop-filter:blur(10px);
+ transition:.3s
+}
+.btn:hover{background:#fff;color:#111}
+section{padding:80px 18px;max-width:1100px;margin:auto}
+.title{text-align:center;font-size:42px;margin-bottom:14px}
+.desc{text-align:center;color:#aaa;max-width:650px;margin:0 auto 40px;line-height:1.7}
+.gallery{
+ display:grid;grid-template-columns:repeat(2,1fr);gap:13px
+}
+.card{overflow:hidden;border-radius:18px;position:relative;background:#171217}
+.card img{width:100%;height:100%;display:block;object-fit:cover;transition:.6s}
+.card:hover img{transform:scale(1.06)}
+.card:nth-child(1),.card:nth-child(6){grid-row:span 2}
+.card:nth-child(1) img,.card:nth-child(6) img{aspect-ratio:3/4}
+.card:not(:nth-child(1)):not(:nth-child(6)) img{aspect-ratio:1/1}
+.message{
+ background:linear-gradient(135deg,#1a0b12,#281018);
+ border:1px solid rgba(255,255,255,.12);border-radius:30px;
+ padding:50px 25px;text-align:center;box-shadow:0 20px 80px rgba(0,0,0,.4)
+}
+.message p{font-size:21px;line-height:1.9;color:#eee}
+.heart{font-size:55px;animation:pulse 1.5s infinite;display:block;margin-bottom:15px}
+@keyframes pulse{50%{transform:scale(1.18)}}
+.footer{text-align:center;padding:45px 15px;color:#888;font-size:13px}
+.float{
+ position:fixed;inset:0;pointer-events:none;z-index:10;overflow:hidden
+}
+.float span{position:absolute;bottom:-30px;font-size:20px;animation:up linear infinite;opacity:.65}
+@keyframes up{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+@media(min-width:700px){
+ .gallery{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head>
+<body>
+<div class="float" id="float"></div>
+
+<header class="hero">
+ <div class="content">
+  <div class="small">A little website made with love</div>
+  <h1>Happy<br>Birthday</h1>
+  <div class="script">Chelloo ❤️</div>
+  <p class="sub">Every moment with you is a treasure. Here's to more smiles, memories, adventures and beautiful moments together.</p>
+  <a class="btn" href="#memories">Open Our Memories ↓</a>
+ </div>
+</header>
+
+<section id="memories">
+ <h2 class="title">Our Memories ✨</h2>
+ <p class="desc">A few little moments that deserve their own place on the internet.</p>
+ <div class="gallery">
+    <div class="card"><img src="photos/photo1.jpeg" alt="Our memory 1"></div>
+  <div class="card"><img src="photos/photo2.jpeg" alt="Our memory 2"></div>
+  <div class="card"><img src="photos/photo3.jpeg" alt="Our memory 3"></div>
+  <div class="card"><img src="photos/photo4.jpeg" alt="Our memory 4"></div>
+  <div class="card"><img src="photos/photo5.jpeg" alt="Our memory 5"></div>
+  <div class="card"><img src="photos/photo6.jpeg" alt="Our memory 6"></div>
+  <div class="card"><img src="photos/photo7.jpeg" alt="Our memory 7"></div>
+  <div class="card"><img src="photos/photo8.jpeg" alt="Our memory 8"></div>
+  <div class="card"><img src="photos/photo9.jpeg" alt="Our memory 9"></div>
+  <div class="card"><img src="photos/photo10.jpeg" alt="Our memory 10"></div>
+ </div>
+</section>
+
+<section>
+ <div class="message">
+  <span class="heart">💗</span>
+  <h2 class="title">For My Chelloo</h2>
+  <p>
+   Happy Birthday, my love!<br>
+   Every moment with you is a treasure.<br>
+   May this new year of your life bring you endless happiness,
+   beautiful memories and everything your heart wishes for. ❤️
+  </p>
+ </div>
+</section>
+
+<footer class="footer">
+ Made with ❤️ for Chelloo · Forever & Always
+</footer>
+
+<script>
+const box=document.getElementById('float');
+const emojis=['❤️','💗','✨','🌸','💕'];
+for(let i=0;i<22;i++){
+ const s=document.createElement('span');
+ s.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+ s.style.left=Math.random()*100+'%';
+ s.style.animationDuration=(5+Math.random()*7)+'s';
+ s.style.animationDelay=(Math.random()*6)+'s';
+ box.appendChild(s);
+}
+</script>
+</body>
+</html>
